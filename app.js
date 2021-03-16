@@ -52,37 +52,28 @@ const empleado = {
 var netoAnual = 0;
 
 if (empleado.bruto <= 12000) {
-    console.log("Tu sueldo neto anual es " + (netoAnual = empleado.bruto) + "eu");
+    console.log("Tu sueldo neto anual con o sin hijos es " + (netoAnual = empleado.bruto) + "eu");
 }
-if (empleado.bruto > 12000 && empleado.bruto <= 24000) {
+if (empleado.bruto > 12000 && empleado.bruto <= 24000 && empleado.hijos == 0 ) {
     console.log("Tu sueldo neto anual es " + (netoAnual = empleado.bruto - (empleado.bruto * 0.08)) + "eu");
+} else if (empleado.bruto > 12000 && empleado.bruto <= 24000 && empleado.hijos > 0) {
+  console.log("Tu sueldo neto anual con hijos es " + (netoAnual = empleado.bruto - (empleado.bruto * 0.06)) + "eu");
 }
-if (empleado.bruto > 24000 && empleado.bruto <= 34000) {
+if (empleado.bruto > 24000 && empleado.bruto <= 34000 && empleado.hijos == 0) {
     console.log("Tu sueldo neto anual es " + (netoAnual = empleado.bruto - (empleado.bruto * 0.16)) + "eu");
+} else if (empleado.bruto > 24000 && empleado.bruto <= 34000 && empleado.hijos > 0) {
+  console.log("Tu sueldo neto anual con hijos es " + (netoAnual = empleado.bruto - (empleado.bruto * 0.14)) + "eu");
 }
-if (empleado.bruto > 34000) {
+  if (empleado.bruto > 34000 && empleado.hijos == 0) {
     console.log("Tu sueldo neto anual es " + (netoAnual = empleado.bruto - (empleado.bruto * 0.3)) + "eu");
-}
-
-var netoAnualHijos = 0;
-
-if (empleado.bruto <= 12000) {
-    console.log("Tu sueldo neto anual si tienes hijos es " + (netoAnualHijos = empleado.bruto) + "eu");
-}
-if (empleado.bruto > 12000 && empleado.bruto <= 24000 && empleado.hijos > 0) {
-    console.log("Tu sueldo neto anual si tienes hijos es " + (netoAnualHijos = empleado.bruto - (empleado.bruto * 0.06)) + "eu");
-}
-if (empleado.bruto > 24000 && empleado.bruto <= 34000 && empleado.hijos > 0) {
-    console.log("Tu sueldo neto anual si tienes hijos es " + (netoAnualHijos = empleado.bruto - (empleado.bruto * 0.14)) + "eu");
-}
-if (empleado.bruto > 34000 && empleado.hijos > 0) {
-    console.log("Tu sueldo neto anual si tienes hijos es " + (netoAnualHijos = empleado.bruto - (empleado.bruto * 0.28)) + "eu");
+} else if (empleado.bruto > 34000 && empleado.hijos > 0) {
+  console.log("Tu sueldo neto anual con hijos es " + (netoAnual = empleado.bruto - (empleado.bruto * 0.28)) + "eu");
 }
 
 var netoMensual = 0;
 
 if (empleado.hijos > 0) {
-    console.log("Tu sueldo neto mensual es " + (netoMensual = netoAnualHijos / empleado.pagas) + "eu")
+    console.log("Tu sueldo neto mensual es " + (netoMensual = netoAnual / empleado.pagas) + "eu")
 } else {
     console.log("Tu sueldo neto mensual es " + (netoMensual = netoAnual / empleado.pagas) + "eu")
 }
