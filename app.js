@@ -2,7 +2,7 @@ const product = { count: 3, price: 12.55, type: "ropa" };
 
 var total = 0;
 
-product.count <= 0 ? total = 0 : total = product.count * product.price;
+total = product.count <= 0 ? 0 : product.count * product.price;
 
 console.log("El precio por unidad es " + product.price + "eu");
 console.log("El precio total es " + total + "eu");
